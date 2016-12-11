@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+//declaring an enum
+typedef NS_ENUM(NSInteger,DayOfWeek){
+  DayOfWeekMonday = 1,
+  DayOfWeekTuesday = 2,
+  DayOfWeekWednesday = 3,
+  DayOfWeekThursday = 4,
+  DayOfWeekFriday= 5,
+  DayOfWeekSaturday = 6,
+  DayOfWeekSunday = 7
+};
+
 int main(int argc, const char * argv[]) {
   _Bool b = 10;
   // insert code here...
@@ -104,6 +115,29 @@ int main(int argc, const char * argv[]) {
       NSLog(@"i don't know what kind of day it is");
       break;
   }
+  
+  // this is legit example using switch and enum
+  DayOfWeek currentDayOfweek = DayOfWeekMonday;
+  switch(currentDayOfweek){
+    case DayOfWeekMonday:
+    case DayOfWeekTuesday:
+    case DayOfWeekWednesday:
+    case DayOfWeekThursday:
+      NSLog(@"Just a boring normal day :(");
+      break;
+    case DayOfWeekFriday:
+      NSLog(@"TGIF yeay :D");
+      break;
+    case DayOfWeekSaturday:
+    case DayOfWeekSunday:
+      NSLog(@"Weekend yeay :D");
+      break;
+    default:
+      NSLog(@"i don't know what kind of day it is");
+      break;
+  }
+  
+  
   
   return 0;
 }
