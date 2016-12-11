@@ -55,7 +55,55 @@ int main(int argc, const char * argv[]) {
   NSLog(@"empty String : (emptyString2) %@ # (emptyString3) %@",emptyString2, emptyString3);
   NSLog(@"string with format : %@",StringWithFormat);
   
+  BOOL mrHiggieIsMean = NO;
+  if(mrHiggieIsMean){
+    NSLog(@"Confirmed : he is super man");
+  }else{
+    NSLog(@"No , Actually he's really nice");
+  }
   
+  NSNumber *dummyScale = @10;
+  if([dummyScale intValue] < 4){
+    NSLog(@"dummy scale is less than 4");
+  }else if([dummyScale intValue] > 4 && [dummyScale intValue]< 8){
+    NSLog(@"dummy scale is greater than 4 and less than 8");
+  }else{
+    NSLog(@"dummy scale is greather than 8");
+  }
+  
+  NSString *mrHiggieCurrentHat = @"Sombrero";
+  if([mrHiggieCurrentHat isEqualToString:@"Sombrero"]){
+    NSLog(@"mr higgie current hat is sombrero");
+  }else if([mrHiggieCurrentHat isEqualToString:@"Fedora"]){
+    NSLog(@"mr higgie current hat is fedora");
+  }else{
+    NSLog(@"mr higgie current hat is undefined");
+  }
+  
+  NSLocale *currentLocale = [NSLocale currentLocale];
+  NSString *currentDay = [[NSDate date] descriptionWithLocale:currentLocale];
+  NSLog(@"testing : %@",currentDay);
+  
+  //NOTE :  switch really shines is when it’s used in conjunction with an enum
+  NSInteger dayNumber = 7;
+  switch (dayNumber) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      NSLog(@"Just a boring normal day :(");
+      break;
+    case 5:
+      NSLog(@"TGIF yeay :D");
+      break;
+    case 6:
+    case 7:
+      NSLog(@"Weekend yeay :D");
+      break;
+    default:
+      NSLog(@"i don't know what kind of day it is");
+      break;
+  }
   
   return 0;
 }
