@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person.h"
 
 //declaring an enum
 typedef NS_ENUM(NSInteger,DayOfWeek){
@@ -18,6 +19,13 @@ typedef NS_ENUM(NSInteger,DayOfWeek){
   DayOfWeekSaturday = 6,
   DayOfWeekSunday = 7
 };
+
+//creating new class TalkingIPhone
+@interface TalkingIPhone : NSObject
+@property NSString *firstName;
+@property NSString *lastName;
+@property NSString *modelNumber;
+@end
 
 int main(int argc, const char * argv[]) {
   _Bool b = 10;
@@ -137,7 +145,90 @@ int main(int argc, const char * argv[]) {
       break;
   }
   
+  NSArray *funnyWords = @[@"Schadenfreude", @"Portmanteau", @"Penultimate"];
+  for(NSString *word in funnyWords){
+    NSLog(@"%@ is a funny word",word);
+  }
+  NSArray *mrHiggieNewHats = @[@"cowboy",@"sombrero",@"baseball",@"conductor"];
+  for(NSString *hat in mrHiggieNewHats){
+    NSLog(@"hat : %@",hat);
+  }
   
+  NSDictionary *greatGames = @{
+                              @"ffxv" : @"final fantasy xv",
+                              @"uncharted" : @"uncharted by naughty dog",
+                              @"rl" : @"rocket league"
+                              };
+  for(NSString *greatGameKey in greatGames){
+    NSString *greatGameValue = greatGames[greatGameKey];
+    NSLog(@"key : %@ value : %@",greatGameKey,greatGameValue);
+  }
+  
+  //block
+  void (^logMessage)(void) = ^{
+    NSLog(@"Hello from inside the block");
+  };
+  logMessage();
+  
+  //declare and use block at the same time
+  ^{
+    NSLog(@"Hello from inside the block");
+  }();
+  
+  void(^sumNumbers)(NSUInteger,NSUInteger) = ^(NSUInteger num1, NSUInteger num2){
+    NSLog(@"The sum of the numbers is %lu",num1 + num2);
+  };
+  sumNumbers(400,200);
+  
+  void(^logCount)(NSArray*) = ^(NSArray *array){
+    NSLog(@"There are %lu objects in the array",[array count]);
+  };
+  logCount(@[@"Mr.",@"Higgie"]);
+  
+  void(^enumeratingBlock)(NSString *, NSUInteger, BOOL *) = ^(NSString *word,NSUInteger index, BOOL *stop){
+    NSLog(@"%@ is a funny word",word);
+  };
+  
+  [funnyWords enumerateObjectsUsingBlock:enumeratingBlock];
+  
+  [funnyWords enumerateObjectsUsingBlock:
+   ^(NSString *word, NSUInteger index, BOOL *stop){
+     NSLog(@"%@ is a funny word", word);
+   }];
+  
+//  Person<NSCopying> *person1 = [[Person alloc]init];  //this interface must use NSCopying Protocols
+  Person *person1 = [[Person alloc]initWithFirstNameAndLastName:@"Mr Higgie" lastName:@"Gondo"];
+  person1.firstName = @"Mr Higgie";
+  person1.lastName = @"Gondo";
+  person1.countOfEatingFood = @4;
+  
+  NSLog(@"Person Name : %@",person1.firstName);
+  [person1 speak:@"Good night :)"];
+  NSString *person1FullName = [person1 fullname];
+  NSLog(@"person1 fullname : %@ # list of names %@",person1FullName,[person1 names]);
+  [person1 eating];
+  [person1 decreaseCountOfEatingfood:@2];
+  [person1 eating];
+  
+  NSLog(@"surname : %@",[person1 getSurname]);
+  [person1 changeSurname:@"Gondo"];
+  NSLog(@"my first surname : %@",[person1 getSurname]);
+  
+  [person1 changeNumberOfLife:@10];
+  NSLog(@"my number of life : %@",[person1 getNumberOfLife]);
+  NSLog(@"number of arms : %@",[person1 getNumberOfArms]);
+  
+//  if([Person respondsToSelector:@selector(copyWithZone)]){
+  Person *person2 = [person1 copy];
+  NSLog(@"person2 is called , yeay :D");
+  
+  if([person2.firstName isEqualToString:@"Mr Higgie"]){ //instead of runtime error, the message return nil
+    NSLog(@"person2 firstName is set to : %@",person2.firstName);
+  }else{
+    NSLog(@"person2 firstName is null");
+  }
+  
+//  }
   
   return 0;
 }
