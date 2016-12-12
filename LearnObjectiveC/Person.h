@@ -32,5 +32,6 @@
 -(void)changeNumberOfLife:(NSNumber *)newNumberOfLife;
 -(NSNumber*)getNumberOfLife;
 -(NSNumber*)getNumberOfArms;
--(Person *)copyWithZone:(NSZone *)zone;
+//NOTE : id is equals to NSObject *
+-(id)copyWithZone:(NSZone *)zone;
 @end

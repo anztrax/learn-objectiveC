@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Person.h"
+#import "FighterPerson.h"
 
 //declaring an enum
 typedef NS_ENUM(NSInteger,DayOfWeek){
@@ -227,8 +228,12 @@ int main(int argc, const char * argv[]) {
   }else{
     NSLog(@"person2 firstName is null");
   }
-  
 //  }
+  
+  FighterPerson *fighter1 = [[FighterPerson alloc] initWithFirstNameAndLastName:@"Mr " lastName:@"Noctis"];
+  [fighter1 fightTheMonster];
+  FighterPerson *fighter2 = [fighter1 copy];
+  [fighter2 fightTheMonster];
   
   return 0;
 }

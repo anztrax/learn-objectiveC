@@ -58,9 +58,13 @@
 -(NSNumber *)getNumberOfArms{
   return _numberOfArms;
 }
--(Person *)copyWithZone:(NSZone *)zone{
-  //NOTE : person can have first name and last name because of this init message
-  Person *copyPerson = [[Person allocWithZone:zone]initWithFirstNameAndLastName:_firstName lastName:_lastName];
+-(id)copyWithZone:(NSZone *)zone{
+  /*NOTE : person can have first name and last name because of this init message
+           can't hardcode class type at allocWithZone , example :
+            [[Person allocWithZone:zone]initWithFirstNameAndLastName:_firstName lastName:_lastName];
+  */
+  id copyPerson = [[[self class] allocWithZone:zone]initWithFirstNameAndLastName:_firstName lastName:_lastName];
+  [copyPerson changeSurname:@"mafioso"];
   return copyPerson;
 }
 
