@@ -234,6 +234,7 @@ int main(int argc, const char * argv[]) {
   [fighter1 fightTheMonster];
   FighterPerson *fighter2 = [fighter1 copy];
   [fighter2 fightTheMonster];
+  NSLog(@"fighter 1 pointer : %p",fighter1);
   
   return 0;
 }

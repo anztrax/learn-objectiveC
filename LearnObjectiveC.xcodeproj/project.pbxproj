@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		49856C741DFA7AB3001DD3AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49856C731DFA7AB3001DD3AE /* main.m */; };
+		49F421FE1DFDA51D00932D7D /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F421FD1DFDA51D00932D7D /* Person.m */; };
+		49F422011DFF2B9E00932D7D /* FighterPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F422001DFF2B9E00932D7D /* FighterPerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		49856C701DFA7AB3001DD3AE /* LearnObjectiveC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LearnObjectiveC; sourceTree = BUILT_PRODUCTS_DIR; };
 		49856C731DFA7AB3001DD3AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49F421FB1DFDA4D300932D7D /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		49F421FD1DFDA51D00932D7D /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		49F421FF1DFF2B7100932D7D /* FighterPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FighterPerson.h; sourceTree = "<group>"; };
+		49F422001DFF2B9E00932D7D /* FighterPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FighterPerson.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				49856C731DFA7AB3001DD3AE /* main.m */,
+				49F421FB1DFDA4D300932D7D /* Person.h */,
+				49F421FD1DFDA51D00932D7D /* Person.m */,
+				49F421FF1DFF2B7100932D7D /* FighterPerson.h */,
+				49F422001DFF2B9E00932D7D /* FighterPerson.m */,
 			);
 			path = LearnObjectiveC;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F421FE1DFDA51D00932D7D /* Person.m in Sources */,
+				49F422011DFF2B9E00932D7D /* FighterPerson.m in Sources */,
 				49856C741DFA7AB3001DD3AE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +161,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_ACTIVITY_MODE = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -167,7 +180,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -196,6 +208,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_ACTIVITY_MODE = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -208,7 +221,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -246,6 +258,7 @@
 				49856C791DFA7AB3001DD3AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
